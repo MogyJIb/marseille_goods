@@ -27,7 +27,7 @@ class ProductListFragment : BaseMainFragment(), ProductListContract.View {
     companion object {
         @JvmStatic
         fun newInstance(category: ProductCategory) = ProductListFragment().apply {
-            arguments = bundleOf("CATEGORY" to category)
+            arguments = bundleOf("category" to category)
         }
     }
 
@@ -42,11 +42,11 @@ class ProductListFragment : BaseMainFragment(), ProductListContract.View {
         bottomBarButton().run {
             hide(object : FloatingActionButton.OnVisibilityChangedListener() {
                 override fun onHidden(fab: FloatingActionButton?) {
-                    bottomBar().replaceMenu(R.menu.service_list_menu)
+                    bottomBar().replaceMenu(R.menu.product_list_menu)
                     bottomBar().fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
 
                     setImageResource(R.drawable.outline_shopping_cart_white_24)
-                    //bottomBarButton().setOnClickListener { router().navigate(R.id.action_to_cart) }
+                    bottomBarButton().setOnClickListener { router().navigate(R.id.action_to_cart) }
 
                     show()
                 }
@@ -61,7 +61,7 @@ class ProductListFragment : BaseMainFragment(), ProductListContract.View {
             }
         }
 
-        category = arguments?.getSerializable("CATEGORY") as ProductCategory
+        category = arguments?.getSerializable("category") as ProductCategory
         setTitle(category.title)
 
         /* Init adapter and set up recycler view */

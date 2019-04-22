@@ -22,12 +22,15 @@ data class Product (
     @ColumnInfo(name="imageUrl")
     var imageUrl: String,
 
+    @ColumnInfo(name="description")
+    var description: String,
+
     @ColumnInfo(name = "uid")
     @PrimaryKey
     var uid: String = UUID.randomUUID().toString()
 ): Serializable {
 
-    constructor() : this(ProductCategory.ISRAEL, "", 0.0, "", "")
+    constructor() : this(ProductCategory.ISRAEL, "", 0.0, "", "", "")
 
 }
 

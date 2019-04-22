@@ -9,4 +9,5 @@
     <color name="text_hint">#77000000</color>
     <color name="text_primary_inverse">#FFFFFF</color>
     <color name="error">#c20007</color>
+    <color name="toast_background">#F2F64CA2</color>
 </resources>

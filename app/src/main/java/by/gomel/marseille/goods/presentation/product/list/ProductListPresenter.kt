@@ -1,5 +1,7 @@
 package by.gomel.marseille.goods.presentation.product.list
 
+import androidx.core.os.bundleOf
+import by.gomel.marseille.goods.R
 import by.gomel.marseille.goods.data.models.Product
 import by.gomel.marseille.goods.data.models.ProductCategory
 import by.gomel.marseille.goods.domain.product.GetProductsUseCase
@@ -17,8 +19,10 @@ class ProductListPresenter(
             }, this::handleError)
     }
 
-    override fun onProductClick(product: Product) {
-        //view?.toast("\"${service.name}\" добавлено в корзину")
-    }
+    override fun onProductClick(product: Product)
+            = view?.router()?.navigate(
+                R.id.action_product_list_to_details,
+                bundleOf("product" to product)
+            ) ?: Unit
 
 }

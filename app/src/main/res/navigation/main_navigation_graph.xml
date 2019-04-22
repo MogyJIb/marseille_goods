@@ -19,8 +19,12 @@
 
         <action
             android:id="@+id/action_category_to_products"
-
             app:destination="@id/product_list_fragment"
+            />
+
+        <action
+            android:id="@+id/action_to_cart"
+            app:destination="@id/cart_fragment"
             />
 
     </fragment>
@@ -32,42 +36,39 @@
         android:label="fragment_product_list"
 
         tools:layout="@layout/fragment_product_list"
+        >
+
+        <action
+            android:id="@+id/action_to_cart"
+            app:destination="@id/cart_fragment"
+            />
+
+        <action
+            android:id="@+id/action_product_list_to_details"
+            app:destination="@id/details_fragment"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/details_fragment"
+        android:name="by.gomel.marseille.goods.presentation.product.detail.ProductDetailFragment"
+        android:label="fragment_details"
+        >
+
+        <action
+            android:id="@+id/action_to_cart"
+            app:destination="@id/cart_fragment"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/cart_fragment"
+        android:name="by.gomel.marseille.goods.presentation.cart.CartFragment"
+        android:label="fragment_cart"
+
+        tools:layout="@layout/fragment_cart"
         />
-
-
-
-    <!--</fragment>-->
-
-
-    <!--<action-->
-        <!--android:id="@+id/action_to_cart"-->
-
-        <!--app:destination="@id/cart_fragment"-->
-    <!--/>-->
-
-
-    <!--<fragment-->
-        <!--android:id="@+id/services_list_fragment"-->
-        <!--android:name="by.gomel.marseille.goods.main.presentation.services.list.ServiceListFragment"-->
-        <!--android:label="fragment_service_list"-->
-
-        <!--tools:layout="@layout/fragment_service_list"-->
-        <!--&gt;-->
-
-        <!--<action-->
-            <!--android:id="@+id/action_to_cart"-->
-
-            <!--app:destination="@id/cart_fragment"-->
-            <!--/>-->
-
-    <!--</fragment>-->
-
-    <!--<fragment-->
-        <!--android:id="@+id/cart_fragment"-->
-        <!--android:name="by.gomel.marseille.goods.main.presentation.cart.CartFragment"-->
-        <!--android:label="fragment_cart"-->
-
-        <!--tools:layout="@layout/fragment_cart"-->
-        <!--/>-->
 
 </navigation>

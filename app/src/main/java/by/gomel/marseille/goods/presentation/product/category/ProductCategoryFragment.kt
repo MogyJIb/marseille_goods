@@ -37,7 +37,7 @@ class ProductCategoryFragment : BaseMainFragment(), ProductCategoryContract.View
                     bottomBar().fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
 
                     setImageResource(R.drawable.outline_shopping_cart_white_24)
-                    // TODO bottomBarButton().setOnClickListener { router().navigate(R.id.action_to_cart) }
+                    bottomBarButton().setOnClickListener { router().navigate(R.id.action_to_cart) }
 
                     show()
                 }
