@@ -3,17 +3,13 @@ package by.gomel.marseille.goods.presentation.cart
 import by.gomel.marseille.goods.data.models.CartDto
 import by.gomel.marseille.goods.presentation.base.view.BaseContract
 
+interface CartItemContract {
 
-interface CartContract {
-
-    interface View : BaseContract.View {
-        fun updateCartDtoList(services: List<CartDto>)
-        fun updateTotalAmount(amount: String)
-    }
+    interface View : BaseContract.View
 
     interface Presenter : BaseContract.Presenter {
-        fun onClearButtonClicked()
         fun onItemDeleteButtonClicked(cardDto: CartDto)
+        fun updateCartWithItem(cardDto: CartDto)
     }
 
 }

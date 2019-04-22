@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import by.gomel.marseille.goods.R
+import by.gomel.marseille.goods.data.models.CartDto
 import by.gomel.marseille.goods.data.models.Service
 import by.gomel.marseille.goods.domain.extentions.hide
 import by.gomel.marseille.goods.domain.extentions.show
@@ -20,6 +21,7 @@ import org.koin.android.ext.android.inject
 
 
 class CartFragment : BaseMainFragment(), CartContract.View {
+
     override val presenter: CartContract.Presenter by inject()
 
     private lateinit var cartAdapter: CartAdapter
@@ -59,7 +61,7 @@ class CartFragment : BaseMainFragment(), CartContract.View {
                             rightButtonCaption = getString(R.string.resume)
                     ).apply {
                         rightButtonListener = DialogInterface.OnClickListener { _, _ ->
-                            presenter.onDeleteButtonClicked()
+                            presenter.onClearButtonClicked()
                         }
                     }.show(fragmentManager, InfoDialog::class.java.simpleName)
                     true
@@ -88,8 +90,8 @@ class CartFragment : BaseMainFragment(), CartContract.View {
         super.onDestroyView()
     }
 
-    override fun updateServices(services: List<Service>) {
-            if (services.isEmpty())
+    override fun updateCartDtoList(services: List<CartDto>) {
+        if (services.isEmpty())
             empty_view.show()
         else
             empty_view.hide()
@@ -98,4 +100,5 @@ class CartFragment : BaseMainFragment(), CartContract.View {
     }
 
     override fun updateTotalAmount(amount: String) { amount_text_view.text = amount }
+
 }

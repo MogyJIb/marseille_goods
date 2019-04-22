@@ -9,6 +9,7 @@ class ProductDetailPresenter(
 ) : BasePresenter<ProductDetailContract.View>(), ProductDetailContract.Presenter {
 
     override fun onAddToPurchaseClicked(product: Product) {
+        shoppingCart.add(product)
         view?.toast("\"${product.name}\" добавлено в корзину")
     }
 

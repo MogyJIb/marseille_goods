@@ -1,46 +1,73 @@
 package by.gomel.marseille.goods.domain
 
+import by.gomel.marseille.goods.data.models.CartDto
 import by.gomel.marseille.goods.data.models.Product
 import io.reactivex.subjects.BehaviorSubject
 import java.io.Serializable
 
 
 class ShoppingCart : Serializable {
-    
-    private val products: MutableMap<String, Product> = mutableMapOf()
-    private val count: MutableMap<String, Int> = mutableMapOf()
+
+    private val cartDtoMap: MutableMap<String, CartDto> = mutableMapOf()
+
     val amount: BehaviorSubject<Double> = BehaviorSubject.create()
+    val cartDtoList: List<CartDto>
+        get() = cartDtoMap.values.toList()
 
     fun add(vararg products: Product) {
         products.forEach { product ->
-            if (this.products.containsKey(product.uid)) {
-                this.count[product.uid] = this.count[product.uid]!! + 1
+            if (this.cartDtoMap.containsKey(product.uid)) {
+                cartDtoMap[product.uid]?.let { cartDto ->
+                    cartDto.count++
+                }
             } else {
-                this.products[product.uid] = product
-                this.count[product.uid] = 1
+                this.cartDtoMap[product.uid] = CartDto(product, true, 1)
             }
+        }
+        updateAmount()
+    }
+
+    fun add(vararg cartDtoList: CartDto) {
+        cartDtoList.forEach { cartDto ->
+            cartDtoMap[cartDto.product.uid] = cartDto
+        }
+        updateAmount()
+    }
+
+    fun update(vararg products: Product) {
+        add(*products)
+    }
+
+    fun update(vararg cartDtoList: CartDto) {
+        cartDtoList.forEach { cartDto ->
+            cartDtoMap[cartDto.product.uid] = cartDto
+        }
+        updateAmount()
+    }
+
+    fun remove(vararg cartDtoList: CartDto) {
+        cartDtoList.forEach { cartDto ->
+            cartDtoMap.remove(cartDto.product.uid)
         }
         updateAmount()
     }
 
     fun remove(vararg products: Product) {
         products.forEach { product ->
-            this.products.remove(product.uid)
-            this.count.remove(product.uid)
+            this.cartDtoMap.remove(product.uid)
         }
         updateAmount()
     }
 
     fun clear() {
-        products.clear()
-        count.clear()
+        cartDtoMap.clear()
         updateAmount()
     }
 
     private fun updateAmount() {
         var amount = 0.0
-        products.values.forEach { product ->
-            amount += product.price * count[product.uid]!!
+        cartDtoMap.values.forEach { cartDto ->
+            if (cartDto.checked) amount += cartDto.product.price * cartDto.count
         }
         this.amount.onNext(amount)
     }

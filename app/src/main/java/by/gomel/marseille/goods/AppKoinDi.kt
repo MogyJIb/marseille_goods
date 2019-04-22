@@ -8,6 +8,8 @@ import by.gomel.marseille.goods.domain.product.GetProductsUseCase
 import by.gomel.marseille.goods.presentation.splash.view.SplashPresenter
 import by.gomel.marseille.goods.domain.product.GetProductCategoriesUseCase
 import by.gomel.marseille.goods.presentation.cart.CartContract
+import by.gomel.marseille.goods.presentation.cart.CartItemContract
+import by.gomel.marseille.goods.presentation.cart.CartItemPresenter
 import by.gomel.marseille.goods.presentation.cart.CartPresenter
 import by.gomel.marseille.goods.presentation.product.category.ProductCategoryContract
 import by.gomel.marseille.goods.presentation.product.category.ProductCategoryPresenter
@@ -39,4 +41,5 @@ val productModule = module {
     factory { ProductListPresenter(get()) as ProductListContract.Presenter }
     factory { CartPresenter(get()) as CartContract.Presenter }
     factory { ProductDetailPresenter(get()) as ProductDetailContract.Presenter }
+    factory { CartItemPresenter(get()) as CartItemContract.Presenter }
 }
