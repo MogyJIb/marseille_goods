@@ -9,6 +9,8 @@ import by.gomel.marseille.goods.presentation.splash.view.SplashPresenter
 import by.gomel.marseille.goods.domain.product.GetProductCategoriesUseCase
 import by.gomel.marseille.goods.presentation.product.category.ProductCategoryContract
 import by.gomel.marseille.goods.presentation.product.category.ProductCategoryPresenter
+import by.gomel.marseille.goods.presentation.product.list.ProductListContract
+import by.gomel.marseille.goods.presentation.product.list.ProductListPresenter
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module.module
 
@@ -28,8 +30,8 @@ val splashModule = module {
     factory { SplashPresenter(get()) }
 }
 
-val serviceModule = module {
+val productModule = module {
     factory { ProductCategoryPresenter(get()) as ProductCategoryContract.Presenter }
-   // factory { CartPresenter(get()) as CartContract.Presenter }
-   // factory { ServiceListPresenter(get(), get()) as ServiceListContract.Presenter }
+    factory { ProductListPresenter(get()) as ProductListContract.Presenter }
+    // factory { CartPresenter(get()) as CartContract.Presenter }
 }

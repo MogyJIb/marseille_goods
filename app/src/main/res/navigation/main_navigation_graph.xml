@@ -17,15 +17,27 @@
         tools:layout="@layout/fragment_product_category"
         >
 
+        <action
+            android:id="@+id/action_category_to_products"
 
+            app:destination="@id/product_list_fragment"
+            />
 
     </fragment>
 
-    <!--<action-->
-        <!--android:id="@+id/action_category_grid_to_services"-->
 
-        <!--app:destination="@id/services_list_fragment"-->
-    <!--/>-->
+    <fragment
+        android:id="@+id/product_list_fragment"
+        android:name="by.gomel.marseille.goods.presentation.product.list.ProductListFragment"
+        android:label="fragment_product_list"
+
+        tools:layout="@layout/fragment_product_list"
+        />
+
+
+
+    <!--</fragment>-->
+
 
     <!--<action-->
         <!--android:id="@+id/action_to_cart"-->

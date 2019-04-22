@@ -19,10 +19,18 @@ data class Product (
     @ColumnInfo(name="price")
     var price: Double,
 
+    @ColumnInfo(name="imageUrl")
+    var imageUrl: String,
+
     @ColumnInfo(name = "uid")
     @PrimaryKey
-    val uid: String = UUID.randomUUID().toString()
-): Serializable
+    var uid: String = UUID.randomUUID().toString()
+): Serializable {
+
+    constructor() : this(ProductCategory.ISRAEL, "", 0.0, "", "")
+
+}
+
 
 
 enum class ProductCategory(

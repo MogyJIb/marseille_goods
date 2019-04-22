@@ -23,10 +23,12 @@ data class Service (
 
     @ColumnInfo(name = "uid")
     @PrimaryKey
-    val uid: String = UUID.randomUUID().toString()
+    var uid: String = UUID.randomUUID().toString()
 ): Serializable {
     val price: String
         get() = "$minPrice" + (if (maxPrice < 0) "" else " - $maxPrice") + " P"
+
+    constructor() : this(ServiceCategory.HAIR, "", 0.0, 0.0, "")
 }
 
 

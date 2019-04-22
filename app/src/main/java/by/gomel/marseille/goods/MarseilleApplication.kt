@@ -12,7 +12,7 @@ class MarseilleApplication : Application(){
                 dataModule,
                 domainModule,
                 splashModule,
-                serviceModule
+                productModule
         ))
     }
 }

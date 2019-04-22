@@ -18,9 +18,8 @@ class ProductCategoryPresenter(
     }
 
     override fun onCategoryItemClicked(category: ProductCategory)
-//            = view?.router()?.navigate(
-//        R.id.action_category_grid_to_services,
-//        bundleOf("CATEGORY" to category)
-//    ) ?: Unit
-   = Unit
+            = view?.router()?.navigate(
+                R.id.action_category_to_products,
+                bundleOf("CATEGORY" to category)
+            ) ?: Unit
 }
