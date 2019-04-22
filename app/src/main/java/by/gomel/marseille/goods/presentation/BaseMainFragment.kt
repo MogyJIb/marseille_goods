@@ -32,13 +32,6 @@ abstract class BaseMainFragment : BaseFragment() {
 
                 val toastView = view as LinearLayout
                 toastView.setBackgroundResource(R.drawable.background_toast)
-//                toastView.addView(
-//                    ImageView(context).apply {
-//                        scaleType = ImageView.ScaleType.FIT_CENTER
-//                        setImageResource(R.drawable.marseille_logo)
-//                        layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 200.dp)
-//                    }, 0
-//                )
 
                 val toastMessage = toastView.findViewById(android.R.id.message) as TextView
                 toastMessage.textSize = 16f

@@ -41,10 +41,10 @@
     </style>
 
     <style name="Widget.AppTheme.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxStrokeColor">@color/accent</item>
+        <item name="boxStrokeColor">@color/background</item>
         <item name="android:textColor">@color/text_primary</item>
         <item name="hintEnabled">true</item>
-        <item name="colorControlNormal">@color/accent</item>
+        <item name="colorControlNormal">@color/background</item>
         <item name="android:textColorHint">@drawable/hint_text_color</item>
         <item name="helperTextTextAppearance">@style/TextAppearance.AppTheme.TextInputLayout.HelperText</item>
         <item name="errorTextAppearance">@style/TextAppearance.AppTheme.TextInputLayout.Error</item>

@@ -16,7 +16,7 @@ abstract class BaseFragment: Fragment(), BaseContract.View {
     override fun context() = context
             ?: throw NullPointerException("Class ${this.javaClass.simpleName} context is null")
 
-    override fun toast(text: String) = Toast.makeText(context, text, Toast.LENGTH_LONG).show()
+    override fun toast(text: String) = Toast.makeText(context, text, Toast.LENGTH_SHORT).show()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

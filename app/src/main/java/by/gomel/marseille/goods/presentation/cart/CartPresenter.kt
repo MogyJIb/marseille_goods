@@ -22,7 +22,7 @@ class CartPresenter(
         disposables += shoppingCart.amount
                 .async()
                 .subscribe({
-                    amount -> view?.updateTotalAmount(amount.toString())
+                    amount -> view?.updateTotalAmount("$amount BIN")
                 }, this::handleError)
     }
 

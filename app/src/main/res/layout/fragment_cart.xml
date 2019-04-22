@@ -39,7 +39,7 @@
             android:padding="@dimen/_8dp"
             android:textColor="@color/text_primary_inverse"
             android:textSize="@dimen/_17sp"
-            android:text="14 P"
+            android:text="0.0 BIN"
             android:textStyle="bold|italic"
             />
 

@@ -9,7 +9,6 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import by.gomel.marseille.goods.R
 import by.gomel.marseille.goods.data.models.CartDto
-import by.gomel.marseille.goods.data.models.Service
 import by.gomel.marseille.goods.domain.extentions.hide
 import by.gomel.marseille.goods.domain.extentions.show
 import by.gomel.marseille.goods.presentation.BaseMainFragment
@@ -82,6 +81,15 @@ class CartFragment : BaseMainFragment(), CartContract.View {
                 dividerItemDecoration.setDrawable(it)
             }
             addItemDecoration(dividerItemDecoration)
+        }
+
+        button_buy.setOnClickListener {
+            OrderDialogFragment.newInstance().apply {
+                rightButtonListener = DialogInterface.OnClickListener { _, _ ->
+                    this@CartFragment.toast("Ваш заказ успешно оформлен, ожидайте обратной связи")
+                    router().navigateUp()
+                }
+            }.show(fragmentManager, InfoDialog::class.java.simpleName)
         }
     }
 

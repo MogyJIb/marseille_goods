@@ -16,5 +16,5 @@ abstract class BaseDialogFragment : DialogFragment(), BaseContract.View {
                                 " Use only with BaseActivity instance."
                 )
 
-    override fun toast(text: String) = Toast.makeText(context, text, Toast.LENGTH_LONG).show()
+    override fun toast(text: String) = Toast.makeText(context, text, Toast.LENGTH_SHORT).show()
 }
