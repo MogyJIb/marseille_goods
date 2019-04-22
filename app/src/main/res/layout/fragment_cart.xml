@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/_8dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/_8dp"
+        android:paddingBottom="@dimen/_8dp"
+        android:paddingLeft="@dimen/_8dp"
+        android:background="@color/primary"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_8dp"
+            android:textColor="@color/text_primary_inverse"
+            android:textSize="@dimen/_16sp"
+            android:text="Общая стоимость: "
+            />
+
+        <TextView
+            android:id="@+id/amount_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:padding="@dimen/_8dp"
+            android:textColor="@color/text_primary_inverse"
+            android:textSize="@dimen/_17sp"
+            android:text="14 P"
+            android:textStyle="bold|italic"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginRight="@dimen/_16dp"
+            android:textSize="@dimen/_10sp"
+            android:text="Заказать"
+            android:paddingLeft="@dimen/_24dp"
+            android:paddingRight="@dimen/_24dp"
+
+            style="@style/Widget.AppTheme.Button"
+            />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cart_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:paddingTop="@dimen/_8dp"
+        android:paddingRight="@dimen/_16dp"
+        android:paddingLeft="@dimen/_16dp"
+        android:paddingBottom="@dimen/_16dp"
+        android:clipToPadding="false"
+        android:background="@android:color/transparent"
+
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+        tools:listItem="@layout/service_list_item"
+        />
+
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="У вас еще нет добавленных услуг и товаров. Передите в соответствующий раздел для добавления"
+        android:textSize="@dimen/_17sp"
+        android:textColor="@color/primary"
+        android:layout_marginRight="@dimen/_32dp"
+        android:layout_marginLeft="@dimen/_32dp"
+        />
+
+</LinearLayout>

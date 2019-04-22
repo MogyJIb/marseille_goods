@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/category_background"
+    android:paddingTop="@dimen/_16dp"
+    android:paddingBottom="@dimen/_16dp"
+    android:layout_margin="@dimen/_4dp"
+    >
+
+    <TextView
+        android:id="@+id/name_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/_24dp"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/_18sp"
+        android:fontFamily="sans-serif-medium"
+        android:layout_gravity="center"
+        android:gravity="center|bottom"
+        android:padding="@dimen/_12dp"
+        android:ellipsize="end"
+
+        tools:text="Some name"
+        />
+
+    <Button
+        android:id="@+id/button_more"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/name_text_view"
+        android:layout_marginTop="@dimen/_16dp"
+        android:textSize="@dimen/_10sp"
+        android:text="Подробнее"
+        android:paddingLeft="@dimen/_24dp"
+        android:paddingRight="@dimen/_24dp"
+
+        style="@style/Widget.AppTheme.Button"
+        />
+
+</LinearLayout>

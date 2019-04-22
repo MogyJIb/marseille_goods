@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/main_navigation_graph"
+
+    >
+
+    <!--<fragment-->
+        <!--android:id="@+id/category_grid_fragment"-->
+        <!--android:name="by.gomel.marseille.goods.presentation.services.category.CategoryGridFragment"-->
+        <!--android:label="fragment_category_grid"-->
+
+        <!--tools:layout="@layout/fragment_category_grid"-->
+        <!--&gt;-->
+
+        <!--<action-->
+            <!--android:id="@+id/action_category_grid_to_services"-->
+
+            <!--app:destination="@id/services_list_fragment"-->
+            <!--/>-->
+
+        <!--<action-->
+            <!--android:id="@+id/action_to_cart"-->
+
+            <!--app:destination="@id/cart_fragment"-->
+            <!--/>-->
+
+    <!--</fragment>-->
+
+    <!--<fragment-->
+        <!--android:id="@+id/services_list_fragment"-->
+        <!--android:name="by.gomel.marseille.goods.main.presentation.services.list.ServiceListFragment"-->
+        <!--android:label="fragment_service_list"-->
+
+        <!--tools:layout="@layout/fragment_service_list"-->
+        <!--&gt;-->
+
+        <!--<action-->
+            <!--android:id="@+id/action_to_cart"-->
+
+            <!--app:destination="@id/cart_fragment"-->
+            <!--/>-->
+
+    <!--</fragment>-->
+
+    <!--<fragment-->
+        <!--android:id="@+id/cart_fragment"-->
+        <!--android:name="by.gomel.marseille.goods.main.presentation.cart.CartFragment"-->
+        <!--android:label="fragment_cart"-->
+
+        <!--tools:layout="@layout/fragment_cart"-->
+        <!--/>-->
+
+</navigation>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/splash_navigation_graph"
+
+    app:startDestination="@id/splash_fragment"
+    >
+
+    <fragment
+        android:id="@+id/splash_fragment"
+        android:name="by.gomel.marseille.goods.presentation.splash.view.SplashFragment"
+        android:label="fragment_splash"
+
+        tools:layout="@layout/fragment_splash"
+        >
+
+        <action
+            android:id="@+id/action_splash_fragment_to_main_activity"
+            app:destination="@id/main_activity"
+            app:popUpTo="@+id/main_activity"
+            />
+
+    </fragment>
+
+    <activity
+        android:id="@+id/main_activity"
+        android:name="by.gomel.marseille.goods.presentation.MainActivity"
+        android:label="activity_main"
+
+        tools:layout="@layout/activity_main"
+        />
+
+</navigation>
