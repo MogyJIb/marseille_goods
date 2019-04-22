@@ -14,8 +14,8 @@ class ProductRepository(
     fun get(vararg productIds: String): Observable<List<Product>>
             = Observable.fromCallable { productDao.get(*productIds) }
 
-    fun findByCategory(category: ProductCategory): Observable<List<Product>>
-            = Observable.fromCallable { productDao.findByCategory(category) }
+    fun get(category: ProductCategory): Observable<List<Product>>
+            = Observable.fromCallable { productDao.get(category) }
 
     fun add(vararg products: Product): Observable<Unit> = Observable.fromCallable { productDao.insert(*products) }
 

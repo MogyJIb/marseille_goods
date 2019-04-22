@@ -4,9 +4,11 @@ import by.gomel.marseille.goods.data.database.DatabaseApi
 import by.gomel.marseille.goods.data.repository.IRepository
 import by.gomel.marseille.goods.data.repository.RepositoryApi
 import by.gomel.marseille.goods.domain.ShoppingCart
-import by.gomel.marseille.goods.domain.service.GetServicesUseCase
+import by.gomel.marseille.goods.domain.product.GetProductsUseCase
 import by.gomel.marseille.goods.presentation.splash.view.SplashPresenter
-import by.gomel.marseille.goods.domain.service.GetServiceCategoriesUseCase
+import by.gomel.marseille.goods.domain.product.GetProductCategoriesUseCase
+import by.gomel.marseille.goods.presentation.product.category.ProductCategoryContract
+import by.gomel.marseille.goods.presentation.product.category.ProductCategoryPresenter
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module.module
 
@@ -18,8 +20,8 @@ val dataModule = module {
 }
 
 val domainModule = module {
-    single { GetServiceCategoriesUseCase(get()) }
-    single { GetServicesUseCase(get()) }
+    single { GetProductCategoriesUseCase(get()) }
+    single { GetProductsUseCase(get()) }
 }
 
 val splashModule = module {
@@ -27,7 +29,7 @@ val splashModule = module {
 }
 
 val serviceModule = module {
-    //factory { CategoryGridPresenter(get()) as CategoryGridContract.Presenter }
+    factory { ProductCategoryPresenter(get()) as ProductCategoryContract.Presenter }
    // factory { CartPresenter(get()) as CartContract.Presenter }
    // factory { ServiceListPresenter(get(), get()) as ServiceListContract.Presenter }
 }

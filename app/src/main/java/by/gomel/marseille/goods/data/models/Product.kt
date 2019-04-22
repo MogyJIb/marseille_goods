@@ -25,9 +25,11 @@ data class Product (
 ): Serializable
 
 
-enum class ProductCategory {
-    ISRAEL,
-    ITALY
+enum class ProductCategory(
+    val title: String
+) {
+    ISRAEL("Израиль"),
+    ITALY("Италия")
 }
 
 class ProductCategoryTypeConverter {

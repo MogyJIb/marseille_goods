@@ -14,7 +14,7 @@ interface ProductDao {
     fun get(vararg productIds: String): List<Product>
 
     @Query("SELECT * FROM products WHERE category LIKE :category")
-    fun findByCategory(category: ProductCategory): List<Product>
+    fun get(category: ProductCategory): List<Product>
 
     @Insert
     fun insert(vararg products: Product)

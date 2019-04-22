@@ -24,7 +24,7 @@ class MainActivity : BaseActivity() {
     }
 
     override fun onSupportNavigateUp() = router().navigateUp()
-    override fun router() = Navigation.findNavController(this, R.id.song_nav_host_fragment)
+    override fun router() = Navigation.findNavController(this, R.id.main_nav_host_fragment)
 
     fun setTitle(title: String) { category_title.text = title }
     fun bottomBar(): BottomAppBar = bottom_app_bar

@@ -6,29 +6,33 @@
 
     android:id="@+id/main_navigation_graph"
 
+    app:startDestination="@id/product_category_fragment"
     >
 
-    <!--<fragment-->
-        <!--android:id="@+id/category_grid_fragment"-->
-        <!--android:name="by.gomel.marseille.goods.presentation.services.category.CategoryGridFragment"-->
-        <!--android:label="fragment_category_grid"-->
+    <fragment
+        android:id="@+id/product_category_fragment"
+        android:name="by.gomel.marseille.goods.presentation.product.category.ProductCategoryFragment"
+        android:label="fragment_product_grid"
 
-        <!--tools:layout="@layout/fragment_category_grid"-->
-        <!--&gt;-->
+        tools:layout="@layout/fragment_product_category"
+        >
 
-        <!--<action-->
-            <!--android:id="@+id/action_category_grid_to_services"-->
 
-            <!--app:destination="@id/services_list_fragment"-->
-            <!--/>-->
 
-        <!--<action-->
-            <!--android:id="@+id/action_to_cart"-->
+    </fragment>
 
-            <!--app:destination="@id/cart_fragment"-->
-            <!--/>-->
+    <!--<action-->
+        <!--android:id="@+id/action_category_grid_to_services"-->
 
-    <!--</fragment>-->
+        <!--app:destination="@id/services_list_fragment"-->
+    <!--/>-->
+
+    <!--<action-->
+        <!--android:id="@+id/action_to_cart"-->
+
+        <!--app:destination="@id/cart_fragment"-->
+    <!--/>-->
+
 
     <!--<fragment-->
         <!--android:id="@+id/services_list_fragment"-->
